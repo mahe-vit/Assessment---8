@@ -14,7 +14,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t ${DOCKER_IMAGE} ."
+                    // Changed from sh to bat for Windows execution
+                    bat "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
@@ -22,8 +23,9 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: DOCKER_CRED_ID, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                        sh "echo \$DOCKER_PASSWORD | docker login -u \$DOCKER_USERNAME --password-stdin"
-                        sh "docker push ${DOCKER_IMAGE}"
+                        // Updated to standard Windows batch environment variable formatting
+                        bat "echo %DOCKER_PASSWORD% | docker login -u %DOCKER_USERNAME% --password-stdin"
+                        bat "docker push ${DOCKER_IMAGE}"
                     }
                 }
             }
@@ -31,7 +33,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([file(credentialsId: KUBE_CRED_ID, variable: 'KUBECONFIG')]) {
-                    sh "kubectl apply -f deployment.yaml --kubeconfig=\${KUBECONFIG}"
+                    // Configured to map the file path properly on a Windows workspace
+                    bat "kubectl apply -f deployment.yaml --kubeconfig=\"%KUBECONFIG%\""
                 }
             }
         }
