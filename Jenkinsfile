@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'YOUR_DOCKERHUB_USERNAME/noticeboard:latest'
-        DOCKER_CRED_ID = 'docker-hub-credentials' // Jenkins Credential ID for Docker Hub
-        KUBE_CRED_ID = 'kube-config-credentials'   // Jenkins Credential ID for Kubeconfig
+        DOCKER_IMAGE = 'monish1974/noticeboard:latest'
+        DOCKER_CRED_ID = 'docker-hub-credentials'
+        KUBE_CRED_ID = 'kube-config-credentials'
     }
     stages {
         stage('Clone Repository') {
