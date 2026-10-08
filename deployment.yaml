@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: noticeboard
-        image: YOUR_DOCKERHUB_USERNAME/noticeboard:latest # Replace with your username
+        image: monish1974/noticeboard:latest
         ports:
         - containerPort: 80
 ---
@@ -31,4 +31,4 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30080 # Exposes the application on this port
+      nodePort: 30080
