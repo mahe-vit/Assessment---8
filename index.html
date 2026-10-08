@@ -5,44 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Notice Board</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
-        header { background-color: #003366; color: white; padding: 20px; text-align: center; border-radius: 5px; }
-        .notice-container { margin-top: 20px; }
-        .notice { background: white; padding: 15px; margin-bottom: 15px; border-left: 5px solid #003366; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .date { font-size: 0.85em; color: #666; font-weight: bold; }
-        footer { margin-top: 30px; padding: 10px; text-align: center; font-size: 0.9em; border-top: 1px solid #ccc; }
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        .notice { background: #e9ecef; margin: 15px 0; padding: 15px; border-left: 5px solid #28a745; border-radius: 4px; }
+        .date { font-weight: bold; color: #6c757d; font-size: 0.9em; }
+        .footer { margin-top: 30px; font-size: 0.9em; border-top: 1px solid #ccc; padding-top: 10px; color: #555; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Excel Engineering College</h1>
-        <h2>Department of Computer Science and Engineering</h2>
-    </header>
-
-    <div class="notice-container">
+    <div class="container">
+        <h1>Tech Institute of Technology</h1>
+        <h3>Department of Computer Science & Engineering</h3>
+        
+        <h2>Current Notices</h2>
+        
         <div class="notice">
-            <h3>1. Semester Exam Schedule Released</h3>
-            <p>The end-semester examinations will commence from November 15, 2026. Hall tickets can be downloaded from the student portal.</p>
-            <p class="date">Posted on: October 08, 2026</p>
+            <div class="date">Posted on: October 08, 2026</div>
+            <p><strong>1. End Semester Examinations:</strong> The final assessments will commence from November 10, 2026. Hall tickets can be downloaded next week.</p>
         </div>
 
         <div class="notice">
-            <h3>2. Annual Hackathon Registration</h3>
-            <p>Register for 'Hack-Excel 2026' before October 20. Cash prizes worth $5,000 to be won. Open to all batches.</p>
-            <p class="date">Posted on: October 07, 2026</p>
+            <div class="date">Posted on: October 05, 2026</div>
+            <p><strong>2. Annual Hackathon Registration:</strong> Registrations for 'HackDev 2026' are now open. Submit your team proposals before October 20.</p>
         </div>
 
         <div class="notice">
-            <h3>3. Guest Lecture on Cloud DevOps</h3>
-            <p>Join us for an industry expert session on Kubernetes and Jenkins practices this Friday at 10:00 AM in Seminar Hall 2.</p>
-            <p class="date">Posted on: October 05, 2026</p>
+            <div class="date">Posted on: October 01, 2026</div>
+            <p><strong>3. Guest Lecture on Cloud DevOps:</strong> A mandatory seminar on Kubernetes and CI/CD pipelines will be held in the main auditorium this Friday at 10:00 AM.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Contact Information:</strong> support@techinstitute.edu | +1 (555) 019-2834 | Room 302, Block A</p>
         </div>
     </div>
-
-    <footer>
-        <p><strong>Contact Information:</strong> hod.cse@excelcollege.edu | Ph: +1 (555) 019-2834</p>
-    </footer>
-
 </body>
 </html>
