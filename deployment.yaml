@@ -1,32 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: html-demo
+  name: noticeboard-deployment
+  labels:
+    app: noticeboard
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: html-demo
+      app: noticeboard
   template:
     metadata:
       labels:
-        app: html-demo
+        app: noticeboard
     spec:
       containers:
-      - name: html-demo
-        image: monish1974/html-demo:latest
+      - name: noticeboard
+        image: YOUR_DOCKERHUB_USERNAME/noticeboard:latest # Replace with your username
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: html-demo-service
+  name: noticeboard-service
 spec:
   type: NodePort
   selector:
-    app: html-demo
+    app: noticeboard
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30010
+      nodePort: 30080 # Exposes the application on this port
